@@ -1,35 +1,50 @@
+Summary:	a Jabber (an XML-based open source IM system) client for KDE
+Summary(pl):	klient dla Jabbera (XML-owego systemu powiadamiania) pod KDE
 Name:		konverse
 Version:	0.2
 Release:	1
-Summary:	a Jabber (an XML-based open source IM system) client for KDE
-Group:		Applications/Internet
+Group:		Applications/Communications
+Group(cs):	Aplikace/Komunikace
+Group(da):	Programmer/Kommunikation
+Group(de):	Applikationen/Kommunikation
+Group(es):	Aplicaciones/Comunicaciones
+Group(fr):	Applications/Transmissions
+Group(is):	Forrit/Samskipti
+Group(it):	Applicazioni/Comunicazioni
+Group(ja):	•¢•◊•Í•±°º•∑•Á•Û/ƒÃøÆ
+Group(no):	Applikasjoner/Kommunikasjon
+Group(pl):	Aplikacje/Komunikacja
+Group(pt):	AplicaÁıes/ComunicaÁıes
+Group(ru):	“…Ãœ÷≈Œ…—/ÎœÕÕ’Œ…À¡√……
+Group(sl):	Programi/Komunikacije
+Group(sv):	Till‰mpningar/Kommunikation
+Group(uk):	“…ÀÃ¡ƒŒ¶ “œ«“¡Õ…/ÎœÕ’Œ¶À¡√¶ß
 License:	GPL
-Packager:	Slavek Banko <slavek.banko@axis.cz>
 URL:		http://konverse.sourceforge.net/
-Source:		%{name}-%{version}.tgz
-Prefix:		/usr
-BuildRoot:	/var/tmp/%{name}-%{version}
+Source0:	%{name}-%{version}.tgz
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 
 %description
-Konverse is a Jabber (http://www.jabber.org/) client for KDE.
-Jabber is an Open-Source, XML-based instant messaging protocol.
-Features include a buddy wizard, buddy search and buddy groups.
+Konverse is a Jabber (http://www.jabber.org/) client for KDE. Jabber
+is an Open-Source, XML-based instant messaging protocol. Features
+include a buddy wizard, buddy search and buddy groups.
 
 
 %prep
 rm -fr $RPM_BUILD_ROOT
-%setup
+%setup -q
 make -f Makefile.cvs
 
 
 %build
 ./configure
-make
+%{__make}
 
 
 %install
-make prefix=$RPM_BUILD_ROOT%{prefix} install
+rm -rf $RPM_BUILD_ROOT
+%{__make} prefix=$RPM_BUILD_ROOT%{_prefix} install
 
 
 %clean
@@ -37,41 +52,31 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %files
-/usr/bin/konverse
-/usr/share/applnk/Internet/konverse.desktop
-/usr/share/apps/konverse/icons/hicolor/16x16/actions/add_user.png
-/usr/share/apps/konverse/icons/hicolor/16x16/actions/connect.png
-/usr/share/apps/konverse/icons/hicolor/16x16/actions/chat_dlg.png
-/usr/share/apps/konverse/icons/hicolor/16x16/actions/konverse_message.png
-/usr/share/apps/konverse/icons/hicolor/16x16/actions/new_message.png
-/usr/share/apps/konverse/icons/hicolor/16x16/actions/useradd_dlg.png
-/usr/share/apps/konverse/icons/hicolor/16x16/actions/user_away.png
-/usr/share/apps/konverse/icons/hicolor/16x16/actions/user_dnd.png
-/usr/share/apps/konverse/icons/hicolor/16x16/actions/user_chat.png
-/usr/share/apps/konverse/icons/hicolor/16x16/actions/user_offline.png
-/usr/share/apps/konverse/icons/hicolor/16x16/actions/user_online.png
-/usr/share/apps/konverse/icons/hicolor/16x16/actions/user_unknown.png
-/usr/share/apps/konverse/icons/hicolor/16x16/actions/user_xaway.png
-/usr/share/apps/konverse/icons/hicolor/16x16/apps/konverse.png
-/usr/share/apps/konverse/icons/hicolor/22x22/actions/konverse_away.png
-/usr/share/apps/konverse/icons/hicolor/22x22/actions/konverse_dnd.png
-/usr/share/apps/konverse/icons/hicolor/22x22/actions/konverse_chat.png
-/usr/share/apps/konverse/icons/hicolor/22x22/actions/konverse_offline.png
-/usr/share/apps/konverse/icons/hicolor/22x22/actions/konverse_online.png
-/usr/share/apps/konverse/icons/hicolor/22x22/actions/konverse_xaway.png
-/usr/share/apps/konverse/icons/hicolor/22x22/actions/vcard.png
-/usr/share/apps/konverse/icons/hicolor/22x22/apps/konverse.png
-/usr/share/apps/konverse/pics/konverse-large.png
-/usr/share/icons/locolor/16x16/apps/konverse.png
-/usr/share/icons/locolor/22x22/apps/konverse.png
-
-
-%changelog
-* Sun May 27 2001 Slavek Banko <slavek.banko@axis.cz>
-- moved to version 0.2
-
-* Wed May 24 2001 Slavek Banko <slavek.banko@axis.cz>
-- moved to current CVS version (0.2pre)
-
-* Wed May 23 2001 Slavek Banko <slavek.banko@axis.cz>
-- prepared spec file for RPM
+%defattr(644,root,root,755)
+%attr(755,root,root) %{_bindir}/konverse
+%{_applnkdir}/Internet/konverse.desktop
+%{_datadir}/apps/konverse/icons/hicolor/16x16/actions/add_user.png
+%{_datadir}/apps/konverse/icons/hicolor/16x16/actions/connect.png
+%{_datadir}/apps/konverse/icons/hicolor/16x16/actions/chat_dlg.png
+%{_datadir}/apps/konverse/icons/hicolor/16x16/actions/konverse_message.png
+%{_datadir}/apps/konverse/icons/hicolor/16x16/actions/new_message.png
+%{_datadir}/apps/konverse/icons/hicolor/16x16/actions/useradd_dlg.png
+%{_datadir}/apps/konverse/icons/hicolor/16x16/actions/user_away.png
+%{_datadir}/apps/konverse/icons/hicolor/16x16/actions/user_dnd.png
+%{_datadir}/apps/konverse/icons/hicolor/16x16/actions/user_chat.png
+%{_datadir}/apps/konverse/icons/hicolor/16x16/actions/user_offline.png
+%{_datadir}/apps/konverse/icons/hicolor/16x16/actions/user_online.png
+%{_datadir}/apps/konverse/icons/hicolor/16x16/actions/user_unknown.png
+%{_datadir}/apps/konverse/icons/hicolor/16x16/actions/user_xaway.png
+%{_datadir}/apps/konverse/icons/hicolor/16x16/apps/konverse.png
+%{_datadir}/apps/konverse/icons/hicolor/22x22/actions/konverse_away.png
+%{_datadir}/apps/konverse/icons/hicolor/22x22/actions/konverse_dnd.png
+%{_datadir}/apps/konverse/icons/hicolor/22x22/actions/konverse_chat.png
+%{_datadir}/apps/konverse/icons/hicolor/22x22/actions/konverse_offline.png
+%{_datadir}/apps/konverse/icons/hicolor/22x22/actions/konverse_online.png
+%{_datadir}/apps/konverse/icons/hicolor/22x22/actions/konverse_xaway.png
+%{_datadir}/apps/konverse/icons/hicolor/22x22/actions/vcard.png
+%{_datadir}/apps/konverse/icons/hicolor/22x22/apps/konverse.png
+%{_datadir}/apps/konverse/pics/konverse-large.png
+%{_datadir}/icons/locolor/16x16/apps/konverse.png
+%{_datadir}/icons/locolor/22x22/apps/konverse.png
