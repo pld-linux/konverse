@@ -1,8 +1,9 @@
-Summary:	a Jabber (an XML-based open source IM system) client for KDE
-Summary(pl):	klient dla Jabbera (XML-owego systemu powiadamiania) pod KDE
+Summary:	A Jabber (an XML-based open source IM system) client for KDE
+Summary(pl):	Klient dla Jabbera (XML-owego systemu powiadamiania) pod KDE
 Name:		konverse
 Version:	0.2
 Release:	1
+License:	GPL
 Group:		Applications/Communications
 Group(cs):	Aplikace/Komunikace
 Group(da):	Programmer/Kommunikation
@@ -19,37 +20,34 @@ Group(ru):	“…Ãœ÷≈Œ…—/ÎœÕÕ’Œ…À¡√……
 Group(sl):	Programi/Komunikacije
 Group(sv):	Till‰mpningar/Kommunikation
 Group(uk):	“…ÀÃ¡ƒŒ¶ “œ«“¡Õ…/ÎœÕ’Œ¶À¡√¶ß
-License:	GPL
-URL:		http://konverse.sourceforge.net/
 Source0:	%{name}-%{version}.tgz
+#Source0:	ftp://ftp.sourceforge.net/pub/sourceforge/konverse/%{name}-%{version}.tar.gz
+URL:		http://konverse.sourceforge.net/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
-
 
 %description
 Konverse is a Jabber (http://www.jabber.org/) client for KDE. Jabber
 is an Open-Source, XML-based instant messaging protocol. Features
 include a buddy wizard, buddy search and buddy groups.
 
+%description -l pl
+Konverse to klient Jabbera (http://www.jabber.org/) dla KDE. Jabber
+jest otwartym protoko≥em komunikowania bazuj±cym na XML.
 
 %prep
-rm -fr $RPM_BUILD_ROOT
 %setup -q
-make -f Makefile.cvs
-
 
 %build
+%{__make} -f Makefile.cvs
 ./configure
 %{__make}
-
 
 %install
 rm -rf $RPM_BUILD_ROOT
 %{__make} prefix=$RPM_BUILD_ROOT%{_prefix} install
 
-
 %clean
 rm -rf $RPM_BUILD_ROOT
-
 
 %files
 %defattr(644,root,root,755)
