@@ -6,6 +6,7 @@ Release:	1
 License:	GPL
 Group:		Applications/Communications
 Source0:	%{name}-%{version}.tgz
+# Source0-md5:	a0ce55498d60f87805705af059d43cc8
 #Source0:	ftp://ftp.sourceforge.net/pub/sourceforge/konverse/%{name}-%{version}.tar.gz
 URL:		http://konverse.sourceforge.net/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
