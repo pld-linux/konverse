@@ -18,7 +18,7 @@ include a buddy wizard, buddy search and buddy groups.
 
 %description -l pl
 Konverse to klient Jabbera (http://www.jabber.org/) dla KDE. Jabber
-jest otwartym protoko³em komunikowania bazuj±cym na XML.
+jest otwartym protoko³em komunikacyjnym opartym na XML-u.
 
 %prep
 %setup -q
