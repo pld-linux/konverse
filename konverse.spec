@@ -1,5 +1,5 @@
 Summary:	A Jabber (an XML-based open source IM system) client for KDE
-Summary(pl):	Klient dla Jabbera (XML-owego systemu powiadamiania) pod KDE
+Summary(pl.UTF-8):   Klient dla Jabbera (XML-owego systemu powiadamiania) pod KDE
 Name:		konverse
 Version:	0.2
 Release:	1
@@ -16,9 +16,9 @@ Konverse is a Jabber (http://www.jabber.org/) client for KDE. Jabber
 is an Open-Source, XML-based instant messaging protocol. Features
 include a buddy wizard, buddy search and buddy groups.
 
-%description -l pl
+%description -l pl.UTF-8
 Konverse to klient Jabbera (http://www.jabber.org/) dla KDE. Jabber
-jest otwartym protoko≥em komunikacyjnym opartym na XML-u.
+jest otwartym protoko≈Çem komunikacyjnym opartym na XML-u.
 
 %prep
 %setup -q
