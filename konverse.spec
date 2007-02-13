@@ -1,5 +1,5 @@
 Summary:	A Jabber (an XML-based open source IM system) client for KDE
-Summary(pl.UTF-8):   Klient dla Jabbera (XML-owego systemu powiadamiania) pod KDE
+Summary(pl.UTF-8):	Klient dla Jabbera (XML-owego systemu powiadamiania) pod KDE
 Name:		konverse
 Version:	0.2
 Release:	1
